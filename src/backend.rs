@@ -7,7 +7,7 @@ use std::pin::Pin;
 
 #[cfg(all(
     any(
-        target_os = "linux",
+        all(target_os = "linux", not(target_env = "ohos")),
         target_os = "freebsd",
         target_os = "dragonfly",
         target_os = "netbsd",
@@ -19,7 +19,7 @@ mod linux;
 
 #[cfg(all(
     any(
-        target_os = "linux",
+        all(target_os = "linux", not(target_env = "ohos")),
         target_os = "freebsd",
         target_os = "dragonfly",
         target_os = "netbsd",
@@ -36,7 +36,7 @@ mod wasm;
 mod win_cid;
 #[cfg(all(
     any(
-        target_os = "linux",
+        all(target_os = "linux", not(target_env = "ohos")),
         target_os = "freebsd",
         target_os = "dragonfly",
         target_os = "netbsd",

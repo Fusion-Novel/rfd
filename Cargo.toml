@@ -75,7 +75,7 @@ windows-sys = { version = "0.60", features = [
   "Win32_UI_WindowsAndMessaging",
 ] }
 
-[target.'cfg(any(target_os = "linux", target_os = "freebsd", target_os = "dragonfly", target_os = "netbsd", target_os = "openbsd"))'.dependencies]
+[target.'cfg(any(all(target_os = "linux", not(target_env = "ohos")), target_os = "freebsd", target_os = "dragonfly", target_os = "netbsd", target_os = "openbsd"))'.dependencies]
 # XDG Desktop Portal
 ashpd = { version = "0.11", optional = true, default-features = false, features = [
   "raw_handle",
